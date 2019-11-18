@@ -171,9 +171,9 @@
 
     <div class="space64"></div>
 
-    <section>
+    <section class="main-background">
 
-        <div class="home-banner container main-background">
+        <div class="home-banner container">
             <div class="row">
                 <div class="col-md-4">
                     <img src="{{asset('assets/img/medico-home')}}.png" alt="medico">
