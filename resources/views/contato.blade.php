@@ -19,12 +19,16 @@
                         <h1 class="title-1-center"><b>Quero fazer</b> uma plástica</h1>
                         <p style="text-align:center;">Um dos consultores da Master Health entrará em contato com você.</p>
                         <div class="space16"></div>
+                        <label for="nome">Nome:</label>
                         <input class="form-control" type="text" name="nome" placeholder="Nome completo">
                         <div class="space16"></div>
+                        <label for="email">Email:</label>
                         <input class="form-control" type="email" name="email" placeholder="seu@email.com">
                         <div class="space16"></div>
+                        <label for="telefone">Telefone:</label>
                         <input class="form-control" type="text" name="telefone" placeholder="(99) 99999-9999">
                         <div class="space16"></div>
+                        <label for="cirurgia">Cirurgia:</label>
                         <select name="cirurgia" class="form-control">
                             <option value="">Selecione</option>
                             <option value="Protese de silicone">Prótese de silicone</option>
@@ -45,12 +49,15 @@
                     </form>
                 </div>
                 <div class="col-md-6">
-                    <div class="space64"></div>
-                    <div class="space32"></div>
+                    <div class="space128"></div>
                     <h3 class="title-1-nunito"><i class="main-color fa fa-map-marker"></i>  Av. Paulista, 491 Conj. 73/74 - 7º andar, Cerqueira César</h3>
+                    <div class="space32"></div>
                     <hr>
+                    <div class="space32"></div>
                     <h3 class="title-1-nunito"><i class="main-color fa fa-envelope"></i> contato@karinacristaldo.com.br</h3>
+                    <div class="space32"></div>
                     <hr>
+                    <div class="space32"></div>
                     <h3 class="title-1-nunito"><i class="main-color fa fa-phone"></i> (011) 3373-1900</h3>
                 </div>
 

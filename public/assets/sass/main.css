@@ -161,6 +161,12 @@ body {
   .shopping {
     padding: 2%;
   }
+  .row{
+    padding:5%;
+  }
+  body{
+    overflow-y: hidden;
+  }
 }
 
 /* END MOBILE SETTINGS */
