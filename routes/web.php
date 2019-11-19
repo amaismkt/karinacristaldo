@@ -9,4 +9,4 @@ Route::get('/contato', "PagesController@contato");
 
 Auth::routes();
 
-Route::get('/painel', 'PainelController@index')->name('painel');
+Route::get('/painel', 'PainelController@index');

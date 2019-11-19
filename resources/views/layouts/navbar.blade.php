@@ -1,9 +1,68 @@
+@if(Request::is('painel'))
+
 <nav class="navbar topbar navbar-expand-lg navbar-light bg-light">
-    <div class="col-md-10">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }} <span class="caret"></span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/painel">Painel</a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+@else
+
+<nav class="navbar topbar navbar-expand-lg navbar-light bg-light">
+    <div class="col-md-9">
         <span class="topbar-item"><b><i class="fa fa-map-marker"></i></b> Av. Paulista, 491 Conj. 73/74 - 7º andar, Cerqueira César</span>
         <span class="topbar-item"><b><i class="fa fa-clock-o"></i></b> Seg. à Sex. das 10h às 20h</span>
         <span class="topbar-item"><b><i class="fa fa-phone"></i></b> (011) 3373-1900</span>
-        <span class="topbar-item"><a href="#" class="button"><b>ESPECIALIDADES MAIS PROCURADAS</b></a></span>
+        <!--<span class="topbar-item"><a href="#" class="button"><b>ESPECIALIDADES MAIS PROCURADAS</b></a></span>-->
+    </div>
+    <div class="col-md-1">
+        <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                {{-- @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Criar conta') }}</a>
+                    </li>
+                @endif --}}
+            @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/painel">Painel</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+        </ul>
     </div>
     <div class="col-md-2 social-icons">
         <a href="#"><i class="social-icon fa fa-facebook"></i></a>
@@ -37,9 +96,11 @@
             <li class="nav-item {{ Request::is('eventos') ? 'active' : '' }}">
                 <a class="nav-link menu-item" href="eventos">Eventos</a>
             </li>
-            <li class="nav-item  {{ Request::is('contato') ? 'active' : '' }}">
+            <li class="nav-item {{ Request::is('contato') ? 'active' : '' }}">
                 <a class="nav-link menu-item" href="contato">Contato</a>
             </li>
         </ul>
     </div>
 </nav>
+
+@endif

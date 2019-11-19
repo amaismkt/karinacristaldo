@@ -139,6 +139,41 @@
   color: #244D64;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+  padding-top: 6%;
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  background-color: #444;
+}
+
+.sidebar-header {
+  color: white;
+  font-family: 'Nunito';
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.sidebar ul {
+  padding: 0px;
+  border-top: 1px solid #666;
+}
+
+.items ul li {
+  padding: 10px;
+  list-style-type: none;
+  color: white;
+  border-bottom: 1px solid #666;
+  margin: 0px;
+}
+
+/* END SIDEBAR */
 /* END IMPORTS */
 /* SETTINGS */
 .grid {
@@ -440,6 +475,10 @@ body {
 
 .contact-form-section {
   background-color: #A16B5E;
+}
+
+.has-sidebar {
+  margin-left: 20%;
 }
 
 /* END MISC */

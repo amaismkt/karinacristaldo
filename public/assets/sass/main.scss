@@ -12,6 +12,7 @@ $main-color-hover: rgb(129, 72, 65);
 @import "./helpers";
 @import "./navbar";
 @import "./slider";
+@import "./painel";
 
 /* END IMPORTS */
 
@@ -332,6 +333,10 @@ body{
 
 .contact-form-section{
     background-color:$main-color;
+}
+
+.has-sidebar{
+    margin-left:20%;
 }
 
 /* END MISC */
