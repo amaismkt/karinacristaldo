@@ -7,7 +7,9 @@ Route::get('/eventos', "PagesController@eventos");
 Route::get('/blog', "PagesController@blog");
 Route::get('/contato', "PagesController@contato");
 
+Route::post('/publicar-post', 'BlogController@create');
+
 Auth::routes();
 
 Route::get('/painel', 'PainelController@index');
-Route::get('/painel/blog', 'PainelController@blog');
+Route::get('/painel/blog', 'BlogController@index');

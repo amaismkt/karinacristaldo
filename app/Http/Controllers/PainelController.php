@@ -13,7 +13,7 @@ class PainelController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -26,8 +26,4 @@ class PainelController extends Controller
         return view('painel');
     }
 
-    public function blog()
-    {
-        return view('painel-blog');
-    }
 }

@@ -28,6 +28,7 @@
   width: 100%;
   position: fixed;
   top: 0px;
+  z-index: 999;
 }
 
 .topbar {
@@ -150,8 +151,20 @@ body {
 }
 
 /* SIDEBAR */
+@media only screen and (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  .has-sidebar {
+    margin-left: 15%;
+  }
+}
+
 .has-sidebar {
-  margin-left: 15%;
+  height: 100%;
 }
 
 .sidebar {
@@ -251,29 +264,18 @@ body {
 
 /* END IMAGE HEADER */
 /* FOOTER */
-.fixed-footer {
-  width: 100%;
-  position: absolute;
-  bottom: 50px;
-}
-
 .bottom-footer {
   background-color: #A16B5E;
   width: 100%;
   text-align: center;
-  padding: 10px 0 0 0;
+  padding: 10px 0 1px 0;
   color: white !important;
-  position: absolute;
+  position: relative;
+  bottom: 0px !important;
 }
 
 .bottom-footer p {
   color: white !important;
-}
-
-.bottom-footer a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 .widget-footer {
@@ -372,6 +374,10 @@ body {
 
 /* END SECTIONS */
 /* MISC */
+.full-height {
+  min-height: 100%;
+}
+
 .box {
   text-align: center;
   border: 1px solid #e1e1e1;
@@ -499,6 +505,10 @@ body {
 
 .contact-form-section {
   background-color: #A16B5E;
+}
+
+.jqte_editor, .jqte_source {
+  min-height: 280px !important;
 }
 
 /* END MISC */

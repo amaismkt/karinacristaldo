@@ -86,29 +86,18 @@ body{
 
 /* FOOTER */
 
-.fixed-footer{
-    width:100%;
-    position:absolute;
-    bottom:50px;
-}
-
 .bottom-footer{
     background-color: $main-color;
     width:100%;
     text-align: center;
-    padding:10px 0 0 0;
+    padding:10px 0 1px 0;
     color:white !important;
-    position:absolute;
+    position:relative;
+    bottom:0px !important;
 }
 
 .bottom-footer p{
     color:white !important;
-}
-
-.bottom-footer a{
-    color:white;
-    font-weight: bold;
-    text-decoration: none;
 }
 
 .widget-footer{
@@ -214,6 +203,10 @@ body{
 /* END SECTIONS */
 
 /* MISC */
+
+.full-height{
+    min-height:100%;
+}
 
 .box{
     text-align:center;
@@ -339,6 +332,10 @@ body{
 
 .contact-form-section{
     background-color:$main-color;
+}
+
+.jqte_editor, .jqte_source {
+    min-height:280px !important;
 }
 
 /* END MISC */
