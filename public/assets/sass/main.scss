@@ -86,6 +86,12 @@ body{
 
 /* FOOTER */
 
+.fixed-footer{
+    width:100%;
+    position:absolute;
+    bottom:50px;
+}
+
 .bottom-footer{
     background-color: $main-color;
     width:100%;
@@ -333,10 +339,6 @@ body{
 
 .contact-form-section{
     background-color:$main-color;
-}
-
-.has-sidebar{
-    margin-left:20%;
 }
 
 /* END MISC */

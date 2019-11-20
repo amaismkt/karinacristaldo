@@ -25,4 +25,9 @@ class PainelController extends Controller
     {
         return view('painel');
     }
+
+    public function blog()
+    {
+        return view('painel-blog');
+    }
 }

@@ -1,6 +1,6 @@
-@if(Request::is('painel'))
+@if(Request::is('painel/*') || Request::is('painel'))
 
-<nav class="navbar topbar navbar-expand-lg navbar-light bg-light">
+<nav class="fixed-navbar navbar topbar navbar-expand-lg navbar-light bg-light">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
