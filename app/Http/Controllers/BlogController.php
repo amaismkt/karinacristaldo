@@ -15,13 +15,22 @@ class BlogController extends Controller
 
     public function create(Request $request)
     {
-        dd($request);
-        die();
         $data = $request->input();
         $data['autor'] = auth()->user()->name;
         
         Blog::create($data);
 
         return json_encode($data);
+    }
+
+    public function fileUpload(Request $request)
+    {
+        $file = $request->file('file');
+        $ext = $request->file('file')->extension();
+        $path = public_path("assets/img/blog");
+        $newName = auth()->user()->name."-".$file->getClientOriginalName();
+        $file->move($path, $newName);
+
+        return 'success';
     }
 }

@@ -431,3 +431,35 @@ body{
   
 
 /* END SLIDER */
+
+/* BLOG */
+
+.data{
+    padding-left:10px;
+    text-align: left !important;
+    font-size:12px;
+    color:#666;
+}
+
+.botao-ver-mais{
+    width:100%;
+    background-color:$main-color;
+    color:white;
+    text-align:center;
+    border-radius:25px;
+}
+
+.botao-ver-mais:hover{
+    transition:0.5s;
+    background-color:$secondary-color;
+    color:white;
+}
+
+.botao-ver-mais a{
+    text-decoration: none !important;
+    display:block;
+    padding:10px;
+    color:white;
+}
+
+/* END BLOG */

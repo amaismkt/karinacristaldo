@@ -5,7 +5,6 @@
         <ul>
             <a href="/painel" class="sidebar-item"><li>Painel</li></a>
             <a href="/painel/blog" class="sidebar-item"><li>Blog</li></a>
-            <a href="/painel/eventos" class="sidebar-item"><li>Eventos</li></a>
             <a href="/painel/sobre" class="sidebar-item"><li>Sobre</li></a>
             <a href="/painel/contato" class="sidebar-item"><li>Contato</li></a>
             <a href="/painel/procedimentos" class="sidebar-item"><li>Procedimentos</li></a>

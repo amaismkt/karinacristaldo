@@ -25,6 +25,7 @@
 
                         <div class="space32"></div>
 
+                        <meta name="csrf-token" content="{{ csrf_token() }}">
                         <label for="titulo">Título:</label>
                         <input class="form-control" name="titulo" type="text" required>
                         <div class="space32"></div>

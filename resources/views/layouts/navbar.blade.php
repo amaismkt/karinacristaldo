@@ -82,22 +82,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto main-menu">
             <li class="nav-item {{ Request::is('/') ? 'active' : '' }} {{ Request::is('home') ? 'active' : '' }}">
-                <a class="nav-link menu-item" href="home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link menu-item" href="/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item {{ Request::is('sobre') ? 'active' : '' }}">
-                <a class="nav-link menu-item" href="sobre">Sobre</a>
+                <a class="nav-link menu-item" href="/sobre">Sobre</a>
             </li>
             <li class="nav-item {{ Request::is('procedimentos') ? 'active' : '' }}">
                 <a class="nav-link menu-item" href="#">Procedimentos</a>
             </li>
             <li class="nav-item {{ Request::is('blog') ? 'active' : '' }}">
-                <a class="nav-link menu-item" href="blog">Blog</a>
+                <a class="nav-link menu-item" href="/blog">Blog</a>
             </li>
             <li class="nav-item {{ Request::is('eventos') ? 'active' : '' }}">
-                <a class="nav-link menu-item" href="eventos">Eventos</a>
+                <a class="nav-link menu-item" href="/eventos">Eventos</a>
             </li>
             <li class="nav-item {{ Request::is('contato') ? 'active' : '' }}">
-                <a class="nav-link menu-item" href="contato">Contato</a>
+                <a class="nav-link menu-item" href="/contato">Contato</a>
             </li>
         </ul>
     </div>
