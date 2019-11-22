@@ -33,4 +33,39 @@ class BlogController extends Controller
 
         return 'success';
     }
+
+    public function fileUpdate(Request $request)
+    {
+        $file = $request->file('file');
+        $ext = $request->file('file')->extension();
+        $path = public_path("assets/img/blog");
+        $newName = auth()->user()->name."-".$file->getClientOriginalName();
+        $file->move($path, $newName);
+
+        return 'success';
+    }
+
+    public function posts()
+    {
+        $posts = Blog::all();
+        
+        return view('posts')->with('posts', $posts);
+    }
+
+    public function editPost($id)
+    {
+        $post = Blog::find($id);
+
+        return view('edit-post')->with('post', $post);
+    }
+
+    public function update(Request $request)
+    {
+        $post = Blog::find($request->id);
+
+        $post->update($request->all());
+        $post->save();
+
+        return json_encode($post);
+    }
 }

@@ -41,7 +41,7 @@ body {
     border-top:1px solid #666;
 }
 
-.items ul li{
+.items ul .sidebar-item{
     padding:10px;
     list-style-type: none;
     color:white;
@@ -49,12 +49,38 @@ body {
     margin:0px;
 }
 
+.items ul .sidebar-subitem{
+    font-size:14px;;
+    padding:8px;
+    list-style-type: none;
+    color:white;
+    margin:0px;
+    background-color:#222 !important;
+}
+
 .items ul a:hover{
     text-decoration:none;
 }
 
 .items ul li:hover{
-    background-color:#999;
+    background-color:#999 !important;
 }
 
 /* END SIDEBAR */
+
+/* BLOG */
+
+.edit-button a{
+    font-size:24px;
+    color:green;
+}
+
+.blog-edit{
+    text-align:center;
+}
+
+.image-edit-border{
+    border:3px solid $main-color;
+}
+
+/* END BLOG */

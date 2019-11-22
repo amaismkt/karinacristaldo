@@ -3,11 +3,15 @@
     <div class="sidebar-header">Karina Cristaldo </div>
     <div class="items">
         <ul>
-            <a href="/painel" class="sidebar-item"><li>Painel</li></a>
-            <a href="/painel/blog" class="sidebar-item"><li>Blog</li></a>
-            <a href="/painel/sobre" class="sidebar-item"><li>Sobre</li></a>
-            <a href="/painel/contato" class="sidebar-item"><li>Contato</li></a>
-            <a href="/painel/procedimentos" class="sidebar-item"><li>Procedimentos</li></a>
+            <a href="/painel"><li class="sidebar-item">Painel</li></a>
+            <a href="#"><li id="blog-item" class="sidebar-item">Blog</li></a>
+            <div style="display:none;" id="blog-subitem">
+                <a href="/painel/blog"><li class="sidebar-subitem"><i class="fa fa-arrow-right"></i> Publicar novo post</li></a>
+                <a href="/painel/blog/posts"><li class="sidebar-subitem"><i class="fa fa-arrow-right"></i> Gerenciar posts</li></a>
+            </div>
+            <a href="/painel/sobre"><li class="sidebar-item">Sobre</li></a>
+            <a href="/painel/contato"><li class="sidebar-item">Contato</li></a>
+            <a href="/painel/procedimentos"><li class="sidebar-item">Procedimentos</li></a>
         </ul>
     </div>
 </div>
@@ -16,10 +20,10 @@
     <div class="sidebar-header">Karina Cristaldo </div>
     <div class="items">
         <ul>
-            <a href="/painel" class="sidebar-item"><li>Painel</li></a>
-            <a href="/painel/meus-dados" class="sidebar-item"><li>Meus dados</li></a>
-            <a href="/painel/configuracoes" class="sidebar-item"><li>Configurações</li></a>
-            <a href="/painel/meus-comentarios" class="sidebar-item"><li>Meus comentários</li></a>
+            <a href="/painel"><li class="sidebar-item">Painel</li></a>
+            <a href="/painel/meus-dados"><li class="sidebar-item">Meus dados</li></a>
+            <a href="/painel/configuracoes"><li class="sidebar-item">Configurações</li></a>
+            <a href="/painel/meus-comentarios"><li class="sidebar-item">Meus comentários</li></a>
         </ul>
     </div>
 </div>
