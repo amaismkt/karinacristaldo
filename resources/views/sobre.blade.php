@@ -14,28 +14,25 @@
             <div class="space64"></div>
 
             <div class="col-md-6">
-                <img class="about-picture" src="{{asset('assets/img/foto1.jpg')}}" width="100%" height="100%" alt="sobre">
+            <img class="about-picture" src="{{asset('assets/img')}}/foto-sobre-{{$sobre[0]->foto}}" width="100%" alt="sobre">
             </div>
             <div class="col-md-6">
-                <h1 class="title-1-center">A Clínica</h1>
+                <h1 class="title-1-center">{{$sobre[0]->titulo}}</h1>
                 <hr>
                 <p style="text-align:justify;">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada augue ut pretium tempor. 
-                        Fusce rhoncus pharetra sem a commodo. Vivamus malesuada faucibus mauris sit amet consequat. 
-                        Vestibulum porttitor blandit dignissim. Praesent vehicula risus id viverra feugiat. 
-                        Aliquam nec tellus non mi condimentum euismod. Fusce pellentesque sed velit ornare cursus.
+                    {{$sobre[0]->texto}}
                 </p>
                 <div class="space32"></div>
                 <div class="row">
                     <div class="col-md-9">
-                        <h4 class="title-1-center"><b>Nossa Filosofia</b></h4>
+                        <h4 class="title-1-center"><b>{{$sobre[0]->subtitulo}}</b></h4>
                         <hr>
                         <p style="text-align:justify">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada augue ut pretium tempor. Fusce rhoncus pharetra sem a commodo. Vivamus malesuada faucibus mauris sit amet consequat.
+                            {{$sobre[0]->subtexto}}
                         </p>
                     </div>
                     <div class="col-md-3">
-                        <img style="margin-top:46px;" src="{{asset('assets/img/mission.png')}}" height="100px" alt="missão">
+                        <img style="margin-top:46px;" src="{{asset('assets/img')}}/icone-sobre-{{$sobre[0]->icone}}" height="100px" alt="missão">
                     </div>
                 </div>
             </div>

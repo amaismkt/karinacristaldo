@@ -11,6 +11,9 @@
                 <div class="col-md-6 offset-md-3">
                     <h1 class="title-1-center">Seja bem-vindo {{auth()->user()->name}}</h1>
                     <hr>
+                    <div class="space128"></div>
+                    @php date_default_timezone_set('America/Sao_Paulo') @endphp
+                    <h1 style="text-align:center;font-family:'Nunito';font-size:60px;">{{date("d/m/y")." - ".date('H:i')}}</h1>
                 </div>
             </div>
         </section>

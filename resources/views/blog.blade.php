@@ -32,7 +32,13 @@
 
                         <div class="space16"></div>
 
-                        <p class="data">Postado em: {{$post->created_at}} <br> Por: {{$post->autor}}</p>
+                        <p class="data">
+                            Postado em: {{$post->created_at}} 
+                            <br> 
+                            Por: {{$post->autor}}
+                            <br>
+                            Categoria: {{categoria($post->categoria)}}
+                        </p>
 
                         <div class="space16"></div>
 

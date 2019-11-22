@@ -31,6 +31,8 @@
                             Publicado em: {{$post->created_at}}
                             <br>
                             Por: {{$post->autor}}
+                            <br>
+                            Categoria: {{categoria($post->categoria)}}
                         </p>
                     </div>
                 </div>

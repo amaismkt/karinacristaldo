@@ -4,7 +4,13 @@ function checkExtension()
 {
     if($("#imagem").val() != ""){
         let extension = $("#imagem").val().replace(/^.*\./, '')
-        if(extension != 'png' && extension != 'jpg'){
+        if(
+            extension != 'png' 
+            && extension != 'jpg' 
+            && extension != 'JPG' 
+            && extension != 'JPEG' 
+            && extension != 'PNG'
+        ){
             alert("Formato de imagem não suportado.")
             return false
         }else{

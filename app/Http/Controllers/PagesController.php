@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Blog;
+use App\Sobre;
 
 class PagesController extends Controller
 {
@@ -15,7 +16,9 @@ class PagesController extends Controller
 
     public function sobre()
     {
-        return view('sobre');
+        $sobre = Sobre::all();
+
+        return view('sobre')->with('sobre', $sobre);
     }
 
     public function contato()
