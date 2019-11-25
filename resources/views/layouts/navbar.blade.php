@@ -18,6 +18,7 @@
                     @csrf
                 </form>
             </div>
+
         </li>
     </ul>
 </nav>
@@ -25,13 +26,13 @@
 @else
 
 <nav class="navbar topbar navbar-expand-lg navbar-light bg-light">
-    <div class="col-md-9">
+    <div class="col-md-8">
         <span class="topbar-item"><b><i class="fa fa-map-marker"></i></b> Av. Paulista, 491 Conj. 73/74 - 7º andar, Cerqueira César</span>
         <span class="topbar-item"><b><i class="fa fa-clock-o"></i></b> Seg. à Sex. das 10h às 20h</span>
         <span class="topbar-item"><b><i class="fa fa-phone"></i></b> (011) 3373-1900</span>
         <!--<span class="topbar-item"><a href="#" class="button"><b>ESPECIALIDADES MAIS PROCURADAS</b></a></span>-->
     </div>
-    <div class="col-md-1">
+    <div class="col-md-2">
         <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
             @guest
@@ -87,9 +88,16 @@
             <li class="nav-item {{ Request::is('sobre') ? 'active' : '' }}">
                 <a class="nav-link menu-item" href="/sobre">Sobre</a>
             </li>
-            <li class="nav-item {{ Request::is('procedimentos') ? 'active' : '' }}">
-                <a class="nav-link menu-item" href="#">Procedimentos</a>
+
+            <li class="nav-item dropdown {{ Request::is('procedimentos') ? 'active' : '' }}">
+                <a id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre class="nav-link menu-item dropdown-toggle" href="#">Procedimentos</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @foreach($procedimentos as $procedimento)
+                        <a class="dropdown-item" href="/procedimento/{{$procedimento->id}}">{{$procedimento->titulo}}</a>
+                    @endforeach
+                </div>
             </li>
+
             <li class="nav-item {{ Request::is('blog') ? 'active' : '' }}">
                 <a class="nav-link menu-item" href="/blog">Blog</a>
             </li>

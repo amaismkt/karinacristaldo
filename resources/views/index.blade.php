@@ -242,7 +242,8 @@
     <section>
         <div class="row contact-form-section">
             <div class="col-md-6 offset-md-3">
-                <form>
+                <form id="contact-form">
+                    @csrf
                     <h1 class="title-1-center-light"><b>Quero fazer</b> uma plástica</h1>
                     <p style="color:white;text-align:center;">Um dos consultores da Master Health entrará em contato com você.</p>
                     <div class="space16"></div>
@@ -268,7 +269,7 @@
                         <option value="Outras">Outras</option>
                     </select>
                     <div class="space32"></div>
-                    <button class="botao-email">VOU FAZER MINHA CIRURGIA PLÁSTICA <br><span class="clique-aqui">CLIQUE AQUI</span></button>
+                    <button type="submit" class="botao-email">VOU FAZER MINHA CIRURGIA PLÁSTICA <br><span class="clique-aqui">CLIQUE AQUI</span></button>
                 </form>
             </div>
             <div class="space64"></div>
@@ -341,5 +342,6 @@
 
     @include('layouts.footer')
     <script src="{{asset('assets/js/slider.js')}}"></script>
+    <script src="{{asset('assets/js/contact.js')}}"></script>
 
 @endsection

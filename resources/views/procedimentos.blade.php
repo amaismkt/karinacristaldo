@@ -9,7 +9,7 @@
             <div class="space64"></div>
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <h1 class="title-1-center">Gerenciar posts</h1>
+                    <h1 class="title-1-center">Gerenciar procedimentos</h1>
                     <hr>
                 </div>
             </div>
@@ -20,28 +20,22 @@
             <div class="row">
                 <div class="col-md-10 offset-md-1">
                     <div class="box" style="background-color:white;padding:2%;">
-                        <table class="table table-striped" id="posts">
+                        <table class="table table-striped" id="procedimentos">
                             <thead>
                                 <tr>
                                     <th>Título:</th>
                                     <th>Conteúdo:</th>
-                                    <th>Categoría:</th>
-                                    <th>Autor:</th>
-                                    <th>Data:</th>
                                     <th>Editar:</th>
                                     <th>Deletar:</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($posts as $post)
-                                <tr id="linha-{{$post->id}}">
-                                    <td>{{$post->titulo}}</td>
-                                    <td>{{ substr($post->texto, 0, 50)."..." }}</td>
-                                    <td>{{$post->categoria}}</td>
-                                    <td>{{$post->autor}}</td>
-                                    <td>{{$post->created_at}}</td>
-                                    <td class="blog-edit"><span class="edit-button"><a href="/painel/blog/posts/{{$post->id}}"><i class="fa fa-edit"></i></a></span></td>
-                                    <td class="blog-delete"><span class="delete-button"><a id="{{$post->id}}" onclick="deletarPost(this);" href="#"><i class="fa fa-trash"></i></a></span></td>
+                                @foreach($procedimentos as $procedimento)
+                                <tr id="linha-{{$procedimento->id}}">
+                                    <td>{{$procedimento->titulo}}</td>
+                                    <td>{{ substr($procedimento->texto, 0, 50)."..." }}</td>
+                                    <td class="procedimento-edit"><span class="edit-button"><a href="/painel/procedimento/edit/{{$procedimento->id}}"><i class="fa fa-edit"></i></a></span></td>
+                                    <td class="procedimento-delete"><span class="delete-button"><a id="{{$procedimento->id}}" onclick="deletarProcedimento(this);" href="#"><i class="fa fa-trash"></i></a></span></td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -56,6 +50,6 @@
         
     </div>
 
-    <script src="{{ asset('assets/js/blog.js') }}"></script>
+    <script src="{{ asset('assets/js/procedimentos.js') }}"></script>
 
     @endsection

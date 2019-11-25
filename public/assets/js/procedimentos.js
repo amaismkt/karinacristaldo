@@ -20,16 +20,16 @@ function checkExtension()
     return true
 }
 
-$("#post").submit(() => {
+$("#procedimento").submit(() => {
 
     event.preventDefault()
-    let dados = $("#post").serialize()
+    let dados = $("#procedimento").serialize()
     img = $("#imagem").val()
     imagem = img.replace(`C:\\fakepath\\`, '')
     dados = dados + '&imagem='+imagem
 
     if(checkExtension()){
-        $.post('../publicar-post', dados, response => {
+        $.post('/publicar-procedimento', dados, response => {
             uploadImg()
         })
         .done(() => {
@@ -60,7 +60,7 @@ function uploadImg()
     fd.append('_token', token)
 
     $.ajax({
-        url: '/file-upload',
+        url: '/procedimentos-file-upload',
         type: 'post',
         data: fd,
         contentType: false,
@@ -84,7 +84,7 @@ function updateImg()
     fd.append('_token', token)
 
     $.ajax({
-        url: '/file-update',
+        url: '/procedimentos-file-update',
         type: 'post',
         data: fd,
         contentType: false,
@@ -98,7 +98,7 @@ function updateImg()
 }
 
 $(document).ready(() => {
-    $("#posts").dataTable({
+    $("#procedimentos").dataTable({
         reponsive:true,
         "language":{
             "sEmptyTable": "Nenhum registro encontrado",
@@ -148,9 +148,9 @@ function filePreview()
 
 }
 
-$("#atualizar-post").submit(() => {
+$("#atualizar-procedimento").submit(() => {
     event.preventDefault()
-    let dados = $("#atualizar-post").serialize()
+    let dados = $("#atualizar-procedimento").serialize()
     img = $("#imagem").val()
     imagem = img.replace(`C:\\fakepath\\`, '')
 
@@ -158,7 +158,7 @@ $("#atualizar-post").submit(() => {
         dados = dados + '&imagem='+imagem
 
     if(checkExtension()){
-        $.post('../../../atualizar-post', dados, response => {
+        $.post('../../../atualizar-procedimento', dados, response => {
             if(img)
                 updateImg()
         })
@@ -171,14 +171,14 @@ $("#atualizar-post").submit(() => {
 
 /* END ATUALIZAR E GERENCIAR */
 
-function deletarPost(obj)
+function deletarProcedimento(obj)
 {
-    let r = confirm("Você tem certeza de que deseja excluir permanentemente todos os registros deste post?")
+    let r = confirm("Você tem certeza de que deseja excluir permanentemente todos os registros deste procedimento?")
 
     if(r){
         let id = obj.id
 
-        $.get(`/painel/blog/posts/delete/${id}`)
+        $.get(`/painel/procedimento/delete/${id}`)
         .done(() => {
             $(`#linha-${id}`).fadeOut(300)
         })

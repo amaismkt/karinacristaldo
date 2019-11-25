@@ -75,7 +75,7 @@ body {
     color:green;
 }
 
-.blog-edit{
+.blog-edit, .blog-delete{
     text-align:center;
 }
 
@@ -84,3 +84,16 @@ body {
 }
 
 /* END BLOG */
+
+/* PROCEDIMENTOS */
+
+.procedimento-edit, .procedimento-delete{
+    text-align:center;
+}
+
+.delete-button a{
+    font-size:24px;
+    color:red;
+}
+
+/* END PROCEDIMENTOS */

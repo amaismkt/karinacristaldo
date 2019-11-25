@@ -3,22 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use App\Blog;
+use App\Procedimentos;
 
-class BlogController extends Controller
+class ProcedimentosController extends Controller
 {
     public function index()
     {
-        return view('painel-blog');
+        return view('painel-procedimentos');
     }
 
-    public function create(Request $request)
+    public function administrar()
+    {
+        $procedimentos = Procedimentos::all();
+        return view('procedimentos', compact('procedimentos'));
+    }
+
+    public function store(Request $request)
     {
         $data = $request->input();
-        $data['autor'] = auth()->user()->name;
         
-        Blog::create($data);
+        Procedimentos::create($data);
 
         return json_encode($data);
     }
@@ -27,8 +31,8 @@ class BlogController extends Controller
     {
         $file = $request->file('file');
         $ext = $request->file('file')->extension();
-        $path = public_path("assets/img/blog");
-        $newName = auth()->user()->name."-".$file->getClientOriginalName();
+        $path = public_path("assets/img/procedimentos");
+        $newName = $file->getClientOriginalName();
         $file->move($path, $newName);
 
         return 'success';
@@ -38,30 +42,28 @@ class BlogController extends Controller
     {
         $file = $request->file('file');
         $ext = $request->file('file')->extension();
-        $path = public_path("assets/img/blog");
-        $newName = auth()->user()->name."-".$file->getClientOriginalName();
+        $path = public_path("assets/img/procedimentos");
+        $newName = $file->getClientOriginalName();
         $file->move($path, $newName);
 
         return 'success';
     }
 
-    public function posts()
+    public function editProcedimento($id)
     {
-        $posts = Blog::all();
-        
-        return view('posts')->with('posts', $posts);
+        $procedimento = Procedimentos::find($id);
+
+        return view('edit-procedimento', compact('procedimento'));
     }
 
-    public function editPost($id)
+    public function show($id)
     {
-        $post = Blog::find($id);
-
-        return view('edit-post')->with('post', $post);
+        //
     }
 
     public function update(Request $request)
     {
-        $post = Blog::find($request->id);
+        $post = Procedimentos::find($request->id);
 
         $post->update($request->all());
         $post->save();
@@ -71,7 +73,7 @@ class BlogController extends Controller
 
     public function destroy($id)
     {
-        $procedimento = Blog::find($id);
+        $procedimento = Procedimentos::find($id);
 
         $procedimento->delete();
 

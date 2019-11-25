@@ -11,7 +11,11 @@
             </div>
             <a href="/painel/sobre"><li class="sidebar-item">Sobre</li></a>
             <a href="/painel/contato"><li class="sidebar-item">Contato</li></a>
-            <a href="/painel/procedimentos"><li class="sidebar-item">Procedimentos</li></a>
+            <a href="#"><li id="procedimentos-item" class="sidebar-item">Procedimentos</li></a>
+            <div style="display:none;" id="procedimentos-subitem">
+                <a href="/painel/procedimentos/publicar"><li class="sidebar-subitem"><i class="fa fa-arrow-right"></i> Publicar novo procedimento</li></a>
+                <a href="/painel/procedimentos"><li class="sidebar-subitem"><i class="fa fa-arrow-right"></i> Gerenciar procedimentos</li></a>
+            </div>
         </ul>
     </div>
 </div>

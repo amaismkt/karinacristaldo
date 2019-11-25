@@ -23,6 +23,16 @@ class CreateAboutTable extends Migration
             $table->string('icone');
             $table->timestamps();
         });
+        DB::table('about')->insert(
+            array(
+                'titulo' => 'Lorem Ipsum',
+                'subtitulo' => 'Lorem Ipsum',
+                'texto' => 'Acesse /painel para alterar as informações.',
+                'subtexto' => 'Lorem Ipsum',
+                'foto' => 'foto1.jpg',
+                'icone' => 'mission.png'
+            )
+        );
     }
 
     /**

@@ -4,45 +4,65 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Blog;
 use App\Sobre;
+use App\Procedimentos;
 
 class PagesController extends Controller
 {
     public function index()
     {
         $posts = Blog::all();
+        $procedimentos = Procedimentos::all();
 
-        return view('index')->with('posts', $posts);
+        return view('index', compact('posts', 'procedimentos'));
     }
 
     public function sobre()
     {
         $sobre = Sobre::all();
+        $procedimentos = Procedimentos::all();
 
-        return view('sobre')->with('sobre', $sobre);
+        return view('sobre', compact('sobre', 'procedimentos'));
     }
 
     public function contato()
     {
-        return view('contato');
+        $procedimentos = Procedimentos::all();
+
+        return view('contato', compact('procedimentos'));
     }
 
     public function blog()
     {
         $posts = Blog::all();
+        $procedimentos = Procedimentos::all();
 
-        return view('blog')->with('posts', $posts);
+        return view('blog', compact('posts', 'procedimentos'));
     }
 
     public function eventos()
     {
-        return view('eventos');
+        $procedimentos = Procedimentos::all();
+
+        return view('eventos', compact('procedimentos'));
     }
 
     public function post($id)
     {
         if($post = Blog::find($id)){
-            return view('post')->with('post', $post);
+            $procedimentos = Procedimentos::all();
+
+            return view('post', compact('post', 'procedimentos'));
         }
         return "Post não encontrado!";
+    }
+
+    public function procedimento($id)
+    {
+        if($procedimento = Procedimentos::find($id)){
+            $procedimentos = Procedimentos::all();
+
+            return view('procedimento', compact('procedimento', 'procedimentos'));
+        }
+        return "Procedimento não encontrado!";
     }
 }
