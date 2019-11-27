@@ -12,8 +12,8 @@
     <div class="email-inner-box">
         <p style="text-align:center;color:white;">Informe seus dados e a Master Health entrará em contato com você.</p>
         <label for="email" style="text-align:center;color:white">QUAL SEU EMAIL?</label>
-        <input type="email" name="email" class="form-control">
+        <input type="email" id="contato-email-input" name="email" class="form-control">
         <div class="space32"></div>
-        <button class="botao-email">VOU FAZER MINHA CIRURGIA PLÁSTICA <br><span class="clique-aqui">CLIQUE AQUI</span></button>
+        <a id="contato-email" href="#contato"><button class="botao-email">VOU FAZER MINHA CIRURGIA PLÁSTICA <br><span class="clique-aqui">CLIQUE AQUI</span></button></a>
     </div>
 </div>

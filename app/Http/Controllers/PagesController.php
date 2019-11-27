@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Blog;
 use App\Sobre;
 use App\Procedimentos;
+use App\Contato;
 
 class PagesController extends Controller
 {
@@ -12,46 +13,52 @@ class PagesController extends Controller
     {
         $posts = Blog::all();
         $procedimentos = Procedimentos::all();
+        $contato = Contato::find('1');
 
-        return view('index', compact('posts', 'procedimentos'));
+        return view('index', compact('posts', 'procedimentos', 'contato'));
     }
 
     public function sobre()
     {
         $sobre = Sobre::all();
         $procedimentos = Procedimentos::all();
+        $contato = Contato::find('1');
 
-        return view('sobre', compact('sobre', 'procedimentos'));
+        return view('sobre', compact('sobre', 'procedimentos', 'contato'));
     }
 
     public function contato()
     {
         $procedimentos = Procedimentos::all();
+        $contato = Contato::find('1');
 
-        return view('contato', compact('procedimentos'));
+        return view('contato', compact('procedimentos', 'contato'));
     }
 
     public function blog()
     {
         $posts = Blog::all();
         $procedimentos = Procedimentos::all();
+        $contato = Contato::find('1');
 
-        return view('blog', compact('posts', 'procedimentos'));
+        return view('blog', compact('posts', 'procedimentos', 'contato'));
     }
 
     public function eventos()
     {
         $procedimentos = Procedimentos::all();
+        $contato = Contato::find('1');
 
-        return view('eventos', compact('procedimentos'));
+        return view('eventos', compact('procedimentos', 'contato'));
     }
 
     public function post($id)
     {
         if($post = Blog::find($id)){
             $procedimentos = Procedimentos::all();
+            $contato = Contato::find('1');
 
-            return view('post', compact('post', 'procedimentos'));
+            return view('post', compact('post', 'procedimentos', 'contato'));
         }
         return "Post não encontrado!";
     }
@@ -60,8 +67,9 @@ class PagesController extends Controller
     {
         if($procedimento = Procedimentos::find($id)){
             $procedimentos = Procedimentos::all();
+            $contato = Contato::find('1');
 
-            return view('procedimento', compact('procedimento', 'procedimentos'));
+            return view('procedimento', compact('procedimento', 'procedimentos', 'contato'));
         }
         return "Procedimento não encontrado!";
     }

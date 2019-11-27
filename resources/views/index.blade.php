@@ -239,7 +239,7 @@
 
     <div class="space64"></div>
 
-    <section>
+    <section id="contato">
         <div class="row contact-form-section">
             <div class="col-md-6 offset-md-3">
                 <form id="contact-form">
@@ -247,11 +247,11 @@
                     <h1 class="title-1-center-light"><b>Quero fazer</b> uma plástica</h1>
                     <p style="color:white;text-align:center;">Um dos consultores da Master Health entrará em contato com você.</p>
                     <div class="space16"></div>
-                    <input class="form-control" type="text" name="nome" placeholder="Nome completo">
+                    <input class="form-control" type="text" id="nome-completo" name="nome" placeholder="Nome completo">
                     <div class="space16"></div>
-                    <input class="form-control" type="email" name="email" placeholder="seu@email.com">
+                    <input class="form-control" id="seu-email" type="email" name="email" placeholder="seu@email.com">
                     <div class="space16"></div>
-                    <input class="form-control" type="text" name="telefone" placeholder="(99) 99999-9999">
+                    <input class="form-control" type="text" name="telefone" placeholder="Telefone: (99) 99999-9999">
                     <div class="space16"></div>
                     <select name="cirurgia" class="form-control">
                         <option value="">Selecione</option>
@@ -268,6 +268,21 @@
                         <option value="Transplante Capilar">Transplante Capilar</option>
                         <option value="Outras">Outras</option>
                     </select>
+
+                    <div class="space16"></div>
+
+                        <div id="loading" style="text-align: center; display:none;">
+                            <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        </div>
+
+                        <div style="display:none;" id="sucesso" role="alert" class="alert alert-success">
+                            Mensagem enviada com sucesso!
+                        </div>
+            
+                        <div style="display:none;" id="erro" role="alert" class="alert alert-danger">
+                            Ocorreu um erro, tente novamente mais tarde.
+                        </div>
                     <div class="space32"></div>
                     <button type="submit" class="botao-email">VOU FAZER MINHA CIRURGIA PLÁSTICA <br><span class="clique-aqui">CLIQUE AQUI</span></button>
                 </form>

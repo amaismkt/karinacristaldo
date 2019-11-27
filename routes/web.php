@@ -17,6 +17,7 @@ Auth::routes();
 Route::get('/painel', 'PainelController@index');
 Route::get('/painel/blog', 'BlogController@index');
 Route::get('/painel/sobre', 'SobreController@index');
+Route::get('/painel/contato', 'ContatoController@index');
 Route::get('/painel/blog/posts', 'BlogController@posts');
 Route::get('/painel/blog/posts/{post}', 'BlogController@editPost');
 Route::get('/painel/blog/posts/delete/{post}', 'BlogController@destroy');
@@ -38,3 +39,5 @@ Route::post('/atualizar-procedimento', 'ProcedimentosController@update');
 Route::post('/publicar-procedimento', 'ProcedimentosController@store');
 Route::post('/procedimentos-file-upload', 'ProcedimentosController@fileUpload');
 Route::post('/procedimentos-file-update', 'ProcedimentosController@fileUpdate');
+
+Route::post('/atualizar-contato', 'ContatoController@update');

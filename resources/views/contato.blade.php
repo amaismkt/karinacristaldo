@@ -15,7 +15,8 @@
             <div class="row">
 
                 <div class="col-md-6">
-                    <form>
+                    <form id="contact-form">
+                        @csrf
                         <h1 class="title-1-center"><b>Quero fazer</b> uma plástica</h1>
                         <p style="text-align:center;">Um dos consultores da Master Health entrará em contato com você.</p>
                         <div class="space16"></div>
@@ -45,20 +46,35 @@
                             <option value="Outras">Outras</option>
                         </select>
                         <div class="space32"></div>
-                        <button class="botao-email">VOU FAZER MINHA CIRURGIA PLÁSTICA <br><span class="clique-aqui">CLIQUE AQUI</span></button>
+                        
+                            <div id="loading" style="text-align: center; display:none;">
+                                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                                <span class="sr-only">Loading...</span>
+                            </div>
+
+                            <div class="space16"></div>
+                            
+                            <div style="display:none;" id="sucesso" role="alert" class="alert alert-success">
+                                Mensagem enviada com sucesso!
+                            </div>
+                
+                            <div style="display:none;" id="erro" role="alert" class="alert alert-danger">
+                                Ocorreu um erro, tente novamente mais tarde.
+                            </div>
+                        <button type="submit" class="botao-email">VOU FAZER MINHA CIRURGIA PLÁSTICA <br><span class="clique-aqui">CLIQUE AQUI</span></button>
                     </form>
                 </div>
                 <div class="col-md-6">
                     <div class="space128"></div>
-                    <h3 class="title-1-nunito"><i class="main-color fa fa-map-marker"></i>  Av. Paulista, 491 Conj. 73/74 - 7º andar, Cerqueira César</h3>
+                    <h3 class="title-1-nunito"><i class="main-color fa fa-map-marker"></i>  {{$contato->endereco}}</h3>
                     <div class="space32"></div>
                     <hr>
                     <div class="space32"></div>
-                    <h3 class="title-1-nunito"><i class="main-color fa fa-envelope"></i> contato@karinacristaldo.com.br</h3>
+                    <h3 class="title-1-nunito"><i class="main-color fa fa-envelope"></i> {{$contato->email}}</h3>
                     <div class="space32"></div>
                     <hr>
                     <div class="space32"></div>
-                    <h3 class="title-1-nunito"><i class="main-color fa fa-phone"></i> (011) 3373-1900</h3>
+                    <h3 class="title-1-nunito"><i class="main-color fa fa-phone"></i> {{$contato->telefone}}</h3>
                 </div>
 
             </div>
@@ -74,5 +90,6 @@
 </section>
 
 @include('layouts.footer')
+<script src="{{asset('assets/js/contact.js')}}"></script>
 
 @endsection

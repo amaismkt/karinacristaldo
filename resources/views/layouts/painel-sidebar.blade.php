@@ -23,12 +23,12 @@
 <div class="sidebar" id="sidebar">
     <div class="sidebar-header">Karina Cristaldo </div>
     <div class="items">
-        <ul>
+        {{-- <ul>
             <a href="/painel"><li class="sidebar-item">Painel</li></a>
             <a href="/painel/meus-dados"><li class="sidebar-item">Meus dados</li></a>
             <a href="/painel/configuracoes"><li class="sidebar-item">Configurações</li></a>
             <a href="/painel/meus-comentarios"><li class="sidebar-item">Meus comentários</li></a>
-        </ul>
+        </ul> --}}
     </div>
 </div>
 @endif

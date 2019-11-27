@@ -27,9 +27,9 @@
 
 <nav class="navbar topbar navbar-expand-lg navbar-light bg-light">
     <div class="col-md-8">
-        <span class="topbar-item"><b><i class="fa fa-map-marker"></i></b> Av. Paulista, 491 Conj. 73/74 - 7º andar, Cerqueira César</span>
-        <span class="topbar-item"><b><i class="fa fa-clock-o"></i></b> Seg. à Sex. das 10h às 20h</span>
-        <span class="topbar-item"><b><i class="fa fa-phone"></i></b> (011) 3373-1900</span>
+        <span class="topbar-item"><b><i class="fa fa-map-marker"></i></b> {{$contato->endereco}}</span>
+        <span class="topbar-item"><b><i class="fa fa-envelope"></i></b> {{$contato->email}}</span>
+        <span class="topbar-item"><b><i class="fa fa-phone"></i></b> {{$contato->telefone}}</span>
         <!--<span class="topbar-item"><a href="#" class="button"><b>ESPECIALIDADES MAIS PROCURADAS</b></a></span>-->
     </div>
     <div class="col-md-2">
